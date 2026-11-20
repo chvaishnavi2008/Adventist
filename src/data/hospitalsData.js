@@ -1,6 +1,6 @@
 /**
- * Official Medical Trust Facilities
- * Source: Medical Trust of the Seventh-day Adventists reference documentation.
+ * Official Medical Trust Facilities Data
+ * Source: The Medical Trust of the Seventh-day Adventists (project-reference documents)
  * Exactly 10 Hospitals operated directly by the Medical Trust, plus 1 College of Nursing.
  */
 
@@ -14,12 +14,38 @@ export const MEDICAL_TRUST_HOSPITALS = [
     type: "Hospital",
     establishedYear: "1980",
     beds: "50+ Beds",
-    tagline: "Quality surgical and general healthcare in the hills of Mizoram",
-    description: "Serving the communities of Mizoram with compassionate clinical care, dedicated emergency support, and community health initiatives in the North East region.",
-    specialties: ["General Medicine", "General Surgery", "Obstetrics & Gynaecology", "Emergency Care", "Pediatrics"],
+    tagline: "Quality surgical, maternal, and general healthcare in the hills of Mizoram",
+    description: "Serving the communities of Mizoram with compassionate clinical care, dedicated emergency support, and community health initiatives across the North East region.",
+    longDescription: "Established in 1980 on Seventh-day Tlang in Chawnpui, Aizawl Adventist Hospital is a cornerstone of Christian medical ministry in Mizoram. The facility provides inpatient and outpatient medical services, well-equipped surgical theatres, maternal and child healthcare, and emergency response for communities navigating the challenging hilly geography of the state.",
+    specialties: [
+      "General Medicine",
+      "General Surgery",
+      "Obstetrics & Gynaecology",
+      "Emergency Trauma",
+      "Pediatrics",
+      "Orthopaedics",
+      "Clinical Laboratory"
+    ],
+    facilities: [
+      "24/7 Emergency Care",
+      "Major Operation Theatres",
+      "Neonatal & Maternity Ward",
+      "Digital X-Ray & Ultrasound",
+      "In-House Pharmacy",
+      "Community Outreach Mobile Clinic"
+    ],
     address: "Seventh-day Tlang, Chawnpui, Aizawl, Mizoram 796009",
     phone: "+91-389-2342211",
-    mapCoords: { x: 88.5, y: 48.0 } // SVG percentage for India map
+    emergencyPhone: "+91 6909608512",
+    email: "aadhos@gmail.com",
+    website: "https://aizawladventisthospital.com/",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Aizawl+Adventist+Hospital+Chawnpui+Aizawl+Mizoram&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Aizawl+Adventist+Hospital+Chawnpui+Aizawl+Mizoram",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Aizawl Adventist Hospital hillside campus, Chawnpui",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
+    mapCoords: { x: 88.5, y: 48.0 }
   },
   {
     id: "sda-medical-centre-bangalore",
@@ -31,10 +57,37 @@ export const MEDICAL_TRUST_HOSPITALS = [
     establishedYear: "1978",
     beds: "75+ Beds",
     tagline: "Multispecialty Christian medical center in central Bengaluru",
-    description: "A prominent urban healthcare center providing compassionate healing, outpatient and inpatient care, advanced diagnostics, and lifestyle medicine.",
-    specialties: ["Internal Medicine", "General & Laparoscopic Surgery", "Orthopaedics", "Cardiology", "Diagnostics"],
-    address: "Spencer Road, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560005",
+    description: "A prominent urban healthcare center providing compassionate healing, inpatient and outpatient services, diagnostics, and lifestyle wellness.",
+    longDescription: "Located on Spencer Road in Frazer Town, the Seventh Day Adventist Medical Centre (SDAMC) has delivered wholistic medical healing in the heart of Bengaluru for over four decades. Combining modern clinical technology with Christian compassion, the medical centre provides specialized surgeries, 24/7 emergency response, chronic disease management, and preventive lifestyle medicine.",
+    specialties: [
+      "Internal Medicine",
+      "General & Laparoscopic Surgery",
+      "Orthopaedics & Joint Care",
+      "Cardiology",
+      "Obstetrics & Gynaecology",
+      "Pediatrics",
+      "Dermatology",
+      "ENT"
+    ],
+    facilities: [
+      "24/7 Emergency & Ambulance",
+      "Modular Surgical Suites",
+      "Intensive Care Unit (ICU)",
+      "High-Precision Pathology Lab",
+      "Digital Radiology & Ultrasound",
+      "Day Care Surgery Unit"
+    ],
+    address: "8, Spencer Road, Cleveland Town, Frazer Town, Bengaluru, Karnataka 560005",
     phone: "+91-80-25471415",
+    emergencyPhone: "+91-80-25360190",
+    email: "info@sdahospital.com",
+    website: "https://sdahospital.com",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+Medical+Centre+Spencer+Road+Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+Medical+Centre+Spencer+Road+Bengaluru",
+    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Seventh Day Adventist Medical Centre, Bengaluru urban facility",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 38.0, y: 76.5 }
   },
   {
@@ -48,9 +101,35 @@ export const MEDICAL_TRUST_HOSPITALS = [
     beds: "60+ Beds",
     tagline: "Over eight decades of dedicated healthcare service in Western UP",
     description: "Founded in the historic missionary tradition, Mattison Memorial provides affordable clinical, maternity, and surgical care to rural and semi-urban families.",
-    specialties: ["Maternal & Child Health", "General Surgery", "Internal Medicine", "Ophthalmology", "24/7 Trauma"],
+    longDescription: "Mattison Memorial Hospital was established in 1939 on Bulandshahr Road in Hapur, Uttar Pradesh. For more than 85 years, it has stood as a beacon of affordable, compassionate healthcare for thousands of rural and semi-urban families in Western UP, offering critical maternal care, eye care camps, emergency treatment, and general surgery.",
+    specialties: [
+      "Maternal & Child Health",
+      "General Surgery",
+      "Internal Medicine",
+      "Ophthalmology",
+      "Pediatrics",
+      "Trauma Care",
+      "Preventive Health"
+    ],
+    facilities: [
+      "Maternity & Labor Rooms",
+      "General Operation Theatre",
+      "Emergency Observation Unit",
+      "Diagnostic Lab & X-Ray",
+      "Subsidized Pharmacy",
+      "Rural Mobile Health Camps"
+    ],
     address: "Bulandshahr Road, Hapur, Uttar Pradesh 245101",
     phone: "+91-122-2312245",
+    emergencyPhone: "+91-122-2312245",
+    email: null,
+    website: null,
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Mattison+Memorial+Hospital+Bulandshahr+Road+Hapur+Uttar+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Mattison+Memorial+Hospital+Bulandshahr+Road+Hapur+Uttar+Pradesh",
+    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Mattison Memorial Hospital medical ward & patient care facility",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 39.5, y: 31.0 }
   },
   {
@@ -63,10 +142,36 @@ export const MEDICAL_TRUST_HOSPITALS = [
     establishedYear: "1974",
     beds: "70+ Beds",
     tagline: "Comprehensive inpatient and outpatient healing center in Salisbury Park",
-    description: "Nestled in Salisbury Park, Pune Adventist Hospital delivers personalized medical attention, state-of-the-art surgery, and wholistic health programs.",
-    specialties: ["General Medicine", "Orthopaedic Surgery", "ENT", "Obstetrics & Gynaecology", "Physiotherapy"],
-    address: "Salisbury Park, Gultekdi, Pune, Maharashtra 411037",
+    description: "Nestled in Salisbury Park, Pune Adventist Hospital delivers personalized medical attention, surgery, diagnostics, and wholistic health programs.",
+    longDescription: "Located in the tranquil environment of Salisbury Park in Gultekdi, Pune Adventist Hospital was founded in 1974. Operating under the Medical Trust, the hospital serves Pune's urban population and suburban communities with multi-specialty inpatient care, orthopaedics, obstetrics, ENT, and community health screenings grounded in Seventh-day Adventist health principles.",
+    specialties: [
+      "General Medicine",
+      "Orthopaedic Surgery",
+      "Obstetrics & Gynaecology",
+      "ENT Surgery",
+      "Physiotherapy & Rehabilitation",
+      "Pediatrics",
+      "Diagnostics"
+    ],
+    facilities: [
+      "24-Hour Casualty & Emergency",
+      "Modern Surgical Theatres",
+      "Physiotherapy & Rehab Center",
+      "Digital Radiography",
+      "Full Pathology Laboratory",
+      "Well-Woman Maternity Suite"
+    ],
+    address: "Salisbury Park, Gultekdi, Post Box 1405, Pune, Maharashtra 411037",
     phone: "+91-20-24261775",
+    emergencyPhone: "+91-20-24269645",
+    email: null,
+    website: null,
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Pune+Adventist+Hospital+Salisbury+Park+Pune&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Pune+Adventist+Hospital+Salisbury+Park+Pune",
+    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Pune Adventist Hospital inpatient & clinical complex, Salisbury Park",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 32.5, y: 60.5 }
   },
   {
@@ -79,10 +184,36 @@ export const MEDICAL_TRUST_HOSPITALS = [
     establishedYear: "1965",
     beds: "100+ Beds",
     tagline: "Renowned surgical, eye, and general medical care in Punjab",
-    description: "Known throughout Punjab for clinical excellence, advanced ophthalmology, compassionate nursing, and outreach clinics serving rural communities.",
-    specialties: ["Ophthalmology", "General & GI Surgery", "Internal Medicine", "Gynecology", "Radiology"],
+    description: "Known throughout Punjab for clinical excellence, advanced ophthalmology, compassionate nursing, and rural outreach eye camps.",
+    longDescription: "Founded in 1965 on Cantonment Road in Jalandhar, Ruby Nelson Memorial Hospital is one of the most prominent medical mission hospitals in Northern India. The hospital has gained regional renown for its pioneering ophthalmology department, performing thousands of charitable and advanced eye surgeries, along with full general surgery, maternal care, and community diagnostic camps across Punjab.",
+    specialties: [
+      "Ophthalmology & Micro-Eye Surgery",
+      "General & Laparoscopic Surgery",
+      "Internal Medicine",
+      "Obstetrics & Gynaecology",
+      "Radiology & Ultrasound",
+      "Orthopaedics",
+      "Pediatrics"
+    ],
+    facilities: [
+      "State-of-the-Art Eye Care Unit",
+      "Multi-Bed Critical Care Unit",
+      "Modular Operating Rooms",
+      "24/7 Trauma Services",
+      "Comprehensive Diagnostic Imaging",
+      "Outreach Eye Camp Bus"
+    ],
     address: "Cantonment Road, Jalandhar, Punjab 144005",
     phone: "+91-181-2272314",
+    emergencyPhone: "+91-181-2272214",
+    email: null,
+    website: "https://rnmh.org",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Ruby+Nelson+Memorial+Hospital+Cantonment+Road+Jalandhar&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Ruby+Nelson+Memorial+Hospital+Cantonment+Road+Jalandhar",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Ruby Nelson Memorial Hospital surgical & ophthalmology center",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 31.0, y: 22.0 }
   },
   {
@@ -95,10 +226,36 @@ export const MEDICAL_TRUST_HOSPITALS = [
     establishedYear: "1969",
     beds: "120+ Beds",
     tagline: "Premier charitable hospital serving the Palakkad district of Kerala",
-    description: "An established multi-specialty institution known for compassionate patient care, surgical departments, emergency care, and strong community outreach.",
-    specialties: ["Cardiology", "Neurology", "Orthopaedics", "Pediatrics", "Critical Care & ICU"],
+    description: "An established multi-specialty institution known for compassionate patient care, surgical departments, ICU, and strong community outreach.",
+    longDescription: "Established in 1969 in Kanniyampuram, Ottapalam (Palakkad District, Kerala), the Seventh Day Adventist Hospital is a major multi-specialty hospital with over 120 beds. It serves as the primary clinical teaching hospital for the Seventh Day Adventist College of Nursing, providing comprehensive inpatient care, critical care, surgical suites, and specialized departments.",
+    specialties: [
+      "Cardiology",
+      "Neurology",
+      "Orthopaedics & Joint Replacement",
+      "Pediatrics & Neonatology",
+      "Obstetrics & Gynaecology",
+      "General & GI Surgery",
+      "Critical Care & ICU"
+    ],
+    facilities: [
+      "Advanced ICU & Critical Care Unit",
+      "24-Hour Emergency & Trauma Care",
+      "Affiliated College of Nursing Campus",
+      "Fully Automated Clinical Laboratory",
+      "Dialysis Unit",
+      "Digital Imaging & Ultrasound"
+    ],
     address: "Kanniyampuram P.O., Ottapalam, Palakkad District, Kerala 679104",
     phone: "+91-466-2244222",
+    emergencyPhone: "+91-466-2244223",
+    email: null,
+    website: "https://www.osdah.in/",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+Hospital+Kanniyampuram+Ottapalam+Kerala&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+Hospital+Kanniyampuram+Ottapalam+Kerala",
+    image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Seventh Day Adventist Hospital, Ottapalam multi-specialty healthcare campus",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 34.5, y: 84.5 }
   },
   {
@@ -111,10 +268,35 @@ export const MEDICAL_TRUST_HOSPITALS = [
     establishedYear: "1950",
     beds: "50+ Beds",
     tagline: "Historic healthcare institution serving the Himalayan capital",
-    description: "Perched in the mountains of Himachal Pradesh, Simla Sanitarium offers patient-focused therapy, emergency healthcare, and preventive wellness programs.",
-    specialties: ["Chest & Respiratory Medicine", "General Surgery", "Physiotherapy", "Family Medicine", "Emergency Services"],
-    address: "Cart Road, Shimla, Himachal Pradesh 171001",
+    description: "Perched in the mountains of Himachal Pradesh, Simla Sanitarium offers patient-focused therapy, emergency care, and preventive wellness programs.",
+    longDescription: "Located at Carton House on Cart Road in Shimla, Himachal Pradesh, Simla Sanitarium & Hospital was founded in 1950. Carrying the legacy of the original Adventist sanitarium model, the hospital combines acute medical and surgical interventions with therapeutic wellness, respiratory care, and community healthcare across the hill towns of Himachal Pradesh.",
+    specialties: [
+      "Chest & Respiratory Medicine",
+      "General Surgery",
+      "Physiotherapy & Rehabilitation",
+      "Family Medicine",
+      "Emergency Services",
+      "Maternal Health"
+    ],
+    facilities: [
+      "High-Altitude Emergency Unit",
+      "Respiratory Therapy & Spirometry",
+      "General Surgical Theatre",
+      "Physical Therapy Clinic",
+      "Diagnostic Laboratory",
+      "Inpatient Mountain Recovery Wards"
+    ],
+    address: "Carton House, Cart Road, Chaura Maidan, Shimla, Himachal Pradesh 171001",
     phone: "+91-177-2804561",
+    emergencyPhone: "+91-177-2804561",
+    email: null,
+    website: "https://www.sanitariumsimla.org",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Simla+Sanitarium+Hospital+Cart+Road+Shimla&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Simla+Sanitarium+Hospital+Cart+Road+Shimla",
+    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Simla Sanitarium & Hospital Himalayan medical facility",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 35.0, y: 18.0 }
   },
   {
@@ -126,11 +308,36 @@ export const MEDICAL_TRUST_HOSPITALS = [
     type: "Hospital",
     establishedYear: "1995",
     beds: "60+ Beds",
-    tagline: "Compassionate clinical and maternal care in the Delta region",
+    tagline: "Compassionate clinical and maternal care in the Cauvery Delta region",
     description: "Providing modern, affordable medical diagnostics, surgeries, and community wellness programs for patients throughout Thanjavur and neighboring districts.",
-    specialties: ["Obstetrics & Gynaecology", "General Surgery", "Internal Medicine", "Pediatrics", "Emergency Care"],
-    address: "V.O.C. Nagar, Trichy Main Road, Thanjavur, Tamil Nadu 613007",
+    longDescription: "Established in 1995 on Trichy Main Road in V.O.C. Nagar (Melavastha Chavadi), Thanjavur, this hospital serves the agrarian and urban communities of the Cauvery Delta region of Tamil Nadu. It provides affordable maternal and child healthcare, general surgical procedures, internal medicine, and preventive health screenings.",
+    specialties: [
+      "Obstetrics & Gynaecology",
+      "General Surgery",
+      "Internal Medicine",
+      "Pediatrics",
+      "Emergency Trauma",
+      "Clinical Diagnostics"
+    ],
+    facilities: [
+      "Maternity Suites & Delivery Rooms",
+      "Major & Minor Surgical Theatres",
+      "24-Hour Casualty",
+      "Clinical Biochemistry & Pathology",
+      "Ultrasound & Radiography",
+      "Pharmacy Services"
+    ],
+    address: "V.O.C. Nagar, Melavastha Chavadi, Trichy Main Road, Thanjavur, Tamil Nadu 613005",
     phone: "+91-4362-277100",
+    emergencyPhone: "+91-4362-227704",
+    email: null,
+    website: null,
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+Hospital+VOC+Nagar+Thanjavur&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+Hospital+VOC+Nagar+Thanjavur",
+    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Seventh Day Adventist Hospital clinical wards, Thanjavur",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 41.5, y: 85.0 }
   },
   {
@@ -144,9 +351,33 @@ export const MEDICAL_TRUST_HOSPITALS = [
     beds: "40+ Beds",
     tagline: "Pioneering frontier healthcare in remote Meghalaya",
     description: "A vital mission hospital delivering modern clinical, trauma, and surgical services to the indigenous tribal populations of the West Garo Hills.",
-    specialties: ["Rural & Tribal Health", "Emergency Trauma", "Maternal Care", "General Surgery", "Outreach Clinics"],
+    longDescription: "Commissioned in 2019 in Jengjal, West Garo Hills District, Meghalaya, Adventist Mission Hospital (Garo Hills) addresses critical geographical and healthcare barriers in Northeast India. Operating in partnership with regional health authorities and the Seventh-day Adventist Church, the hospital brings modern emergency surgical care, maternal health, and mobile tribal medical camps to remote villages.",
+    specialties: [
+      "Frontier & Tribal Medicine",
+      "Emergency Trauma",
+      "Maternal & Child Health",
+      "General Surgery",
+      "Community Outpatient Care"
+    ],
+    facilities: [
+      "Emergency Treatment Unit",
+      "Modular Surgical Suite",
+      "Labour & Delivery Ward",
+      "Essential Diagnostic Laboratory",
+      "Dispensary & Pharmacy",
+      "Outreach Mobile Health Unit"
+    ],
     address: "Jengjal, West Garo Hills District, Meghalaya 794102",
     phone: "+91-3651-291010",
+    emergencyPhone: "+91 7005196004",
+    email: "admin@ghamh.com",
+    website: "https://ghamh.com",
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Adventist+Mission+Hospital+Jengjal+Meghalaya&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Adventist+Mission+Hospital+Jengjal+Meghalaya",
+    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "Adventist Mission Hospital, Jengjal frontier healthcare facility",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 80.5, y: 41.0 }
   },
   {
@@ -160,9 +391,33 @@ export const MEDICAL_TRUST_HOSPITALS = [
     beds: "45+ Beds",
     tagline: "Dedicated mission healthcare in the Dooars corridor of North Bengal",
     description: "Established to overcome geographical barriers and bring wholistic healing to tea garden workers and rural families across the Alipurduar region.",
-    specialties: ["General Medicine", "Trauma & Minor Surgery", "Maternity & Newborn Care", "Preventive Health", "Community Pharmacy"],
-    address: "Falakata - Madarihat Road, Alipurduar District, Falakata, West Bengal 735211",
+    longDescription: "Founded in 2021 along the Falakata-Madarihat Road in Alipurduar District, West Bengal, the GATE Adventist Mission Hospital (Gate Adventist Medical Centre) delivers life-saving healthcare in the Dooars corridor. The hospital serves tea estate worker communities and agrarian populations with affordable medical consultations, emergency stabilization, maternity care, and diagnostic testing.",
+    specialties: [
+      "General Medicine",
+      "Trauma & Minor Surgery",
+      "Maternity & Newborn Care",
+      "Preventive & Community Health",
+      "Emergency Stabilization"
+    ],
+    facilities: [
+      "Outpatient Consultation Clinics",
+      "Minor Procedure Room",
+      "Emergency Observation Wards",
+      "Clinical Laboratory",
+      "Community Pharmacy",
+      "Health Education Outreach"
+    ],
+    address: "Falakata - Madarihat Road, Parangarpar, Alipurduar District, Falakata, West Bengal 735211",
     phone: "+91-3563-260114",
+    emergencyPhone: "+91 7063689600",
+    email: null,
+    website: null,
+    googleMapsEmbedUrl: "https://maps.google.com/maps?q=Gate+Adventist+Medical+Centre+Falakata+West+Bengal&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Gate+Adventist+Medical+Centre+Falakata+West+Bengal",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80",
+    imageCaption: "GATE Adventist Mission Hospital, Falakata Dooars health center",
+    isAuthenticImage: false,
+    imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 77.0, y: 35.5 }
   }
 ];
@@ -178,16 +433,37 @@ export const NURSING_COLLEGE = {
   capacity: "B.Sc & Post-Basic Nursing Programs",
   tagline: "Excellence in nursing education, ethics, and Christian compassionate care",
   description: "A premier nursing education institution recognized by the Indian Nursing Council (INC) and Kerala Nurses and Midwives Council (KNMC), training inspired healthcare professionals.",
+  longDescription: "The Seventh Day Adventist College of Nursing in Ottapalam, Kerala, was established in 2001 to nurture clinical professionals grounded in technical skill and Christ-like empathy. Affiliated with the Kerala University of Health Sciences (KUHS) and recognized by both the Indian Nursing Council (INC) and Kerala Nurses and Midwives Council (KNMC), the college operates alongside the 120-bed Seventh Day Adventist Hospital, offering students immersive bedside clinical training.",
   programs: [
-    "B.Sc. Nursing (4-Year Degree)",
-    "Post Basic B.Sc. Nursing",
-    "Clinical Residency & Rotations",
-    "Community Health Nursing Practical Training"
+    {
+      title: "B.Sc. Nursing",
+      duration: "4 Years",
+      eligibility: "Plus Two / 10+2 with Physics, Chemistry & Biology (minimum 50%)",
+      description: "Comprehensive undergraduate degree covering medical-surgical nursing, community health, pediatric care, obstetrics, and clinical research."
+    },
+    {
+      title: "Post Basic B.Sc. Nursing",
+      duration: "2 Years",
+      eligibility: "GNM Qualified Registered Nurse & Midwife",
+      description: "Advanced program for diploma nurses seeking career elevation, leadership roles, and nursing administration qualifications."
+    }
   ],
-  affiliation: "Affiliated with Kerala University of Health Sciences (KUHS) & Recognized by Indian Nursing Council",
+  accreditation: [
+    "Recognized by Indian Nursing Council (INC), New Delhi",
+    "Approved by Kerala Nurses and Midwives Council (KNMC), Thiruvananthapuram",
+    "Affiliated with Kerala University of Health Sciences (KUHS), Thrissur",
+    "Clinical Residency at Seventh Day Adventist Hospital, Ottapalam"
+  ],
   address: "Kanniyampuram P.O., Ottapalam, Palakkad District, Kerala 679104",
   phone: "+91-466-2244222",
   email: "sdaconottapalam@gmail.com",
+  website: "https://www.osdah.in/",
+  googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+College+of+Nursing+Ottapalam+Kerala&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+College+of+Nursing+Ottapalam+Kerala",
+  image: "/images/staff-sonia-khan.jpeg",
+  imageCaption: "Seventh Day Adventist College of Nursing academic administration, Ottapalam",
+  isAuthenticImage: true,
+  imageBadge: "Verified Institution Image",
   mapCoords: { x: 34.5, y: 84.5 }
 };
 

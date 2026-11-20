@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Building2, 
   MapPin, 
   Phone, 
-  Calendar, 
-  Bed, 
-  ExternalLink, 
   Search, 
-  GraduationCap, 
-  CheckCircle2,
-  Stethoscope
+  ExternalLink, 
+  Navigation, 
+  ArrowRight,
+  Sparkles,
+  Info
 } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
-import Button from '../common/Button';
-import { MEDICAL_TRUST_HOSPITALS, NURSING_COLLEGE } from '../../data/hospitalsData';
+import { MEDICAL_TRUST_HOSPITALS } from '../../data/hospitalsData';
 
-export default function HospitalListingSection() {
+export default function HospitalListingSection({ isStandalonePage = false }) {
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -30,132 +29,149 @@ export default function HospitalListingSection() {
   });
 
   return (
-    <section id="hospitals" className="py-20 bg-white">
+    <section id="hospitals" className={`py-16 lg:py-24 ${isStandalonePage ? 'bg-slate-50' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeader 
           badge="Direct Institutional Network"
           badgeColor="health"
-          title="The 10 Medical Trust Hospitals Across India"
-          subtitle="Directly operated by The Medical Trust of the Seventh-day Adventists, delivering compassionate, high-standard healthcare."
+          title="Our 10 Medical Trust Hospitals"
+          subtitle="Delivering compassionate, clinical excellence across 10 specialized healthcare facilities in India."
         />
 
-        {/* Search & Region Filter Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200">
-          
-          {/* Region Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-slate-100 rounded-xl w-full md:w-auto">
-            {regions.map((region) => (
-              <button
-                key={region}
-                onClick={() => setSelectedRegion(region)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                  selectedRegion === region
-                    ? 'bg-navy-900 text-white shadow-sm'
-                    : 'text-slate-600 hover:text-navy-900 hover:bg-slate-200/60'
-                }`}
-              >
-                {region === 'All' ? `All Hospitals (${MEDICAL_TRUST_HOSPITALS.length})` : region}
-              </button>
-            ))}
+        {/* Search & Region Filter Bar (Sterling Hospitals Inspired) */}
+        <div className="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 mb-10 space-y-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            {/* Region Tabs */}
+            <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
+              <span className="text-xs font-bold text-slate-500 mr-2 uppercase tracking-wider hidden sm:inline">
+                Region:
+              </span>
+              {regions.map((region) => (
+                <button
+                  key={region}
+                  onClick={() => setSelectedRegion(region)}
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                    selectedRegion === region
+                      ? 'bg-navy-900 text-white shadow-sm'
+                      : 'bg-white text-slate-700 border border-slate-200 hover:border-health-400'
+                  }`}
+                >
+                  {region === 'All' ? `All (${MEDICAL_TRUST_HOSPITALS.length})` : region}
+                </button>
+              ))}
+            </div>
+
+            {/* Search Box */}
+            <div className="relative w-full md:w-80">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <input
+                type="text"
+                placeholder="Search hospital name, city or state..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-9 pr-4 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-health-600 transition-all shadow-sm"
+              />
+            </div>
+
           </div>
 
-          {/* Search Box */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Search by city, hospital or state..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-health-600 transition-all"
-            />
+          <div className="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-200/80">
+            <span>Showing <strong>{filteredHospitals.length}</strong> of 10 hospitals</span>
+            <span className="italic">College of Nursing is listed separately under Education</span>
           </div>
-
         </div>
 
-        {/* 10 Hospital Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {filteredHospitals.map((hospital, index) => (
+        {/* 4-COLUMN DESKTOP GRID (Mandated in Prompt: 4 col desktop, 2 col tablet, 1 col mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredHospitals.map((hospital, idx) => (
             <div
               key={hospital.id}
-              id={hospital.id}
-              className="flex flex-col justify-between rounded-2xl bg-white border border-slate-200/90 hover:border-health-400 shadow-sm hover:shadow-card-hover transition-all duration-300 p-6 group"
+              className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-health-300 transition-all duration-300 flex flex-col justify-between overflow-hidden group"
             >
               <div>
-                {/* Card Top: Numbering & Region */}
-                <div className="flex items-center justify-between mb-3">
-                  <span className="w-7 h-7 rounded-lg bg-navy-50 text-navy-900 text-xs font-bold flex items-center justify-center">
-                    0{index + 1}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-health-50 text-health-700 border border-health-100">
-                      {hospital.region} India
-                    </span>
-                    <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
-                      Est. {hospital.establishedYear}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Hospital Name & Location */}
-                <h3 className="text-xl font-bold text-navy-900 group-hover:text-health-700 transition-colors mb-1">
-                  {hospital.name}
-                </h3>
                 
-                <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mb-3">
-                  <MapPin className="w-3.5 h-3.5 text-sdaAmber-500 shrink-0" />
-                  <span>{hospital.city}, {hospital.state}</span>
+                {/* Hospital Photo & Authenticity Badge */}
+                <div className="relative h-44 w-full bg-slate-100 overflow-hidden">
+                  <img 
+                    src={hospital.image} 
+                    alt={hospital.name} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-2.5 left-2.5 bg-navy-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow">
+                    {hospital.region} India
+                  </div>
+                  <div className="absolute bottom-2 left-2 right-2 bg-navy-950/70 backdrop-blur-xs text-slate-200 text-[9px] px-2 py-0.5 rounded flex items-center justify-between">
+                    <span>{hospital.imageBadge}</span>
+                    <span className="font-semibold text-white">Est. {hospital.establishedYear}</span>
+                  </div>
                 </div>
 
-                <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                  {hospital.description}
-                </p>
+                {/* Body Content */}
+                <div className="p-5">
+                  
+                  {/* Name */}
+                  <h3 className="text-base font-bold text-navy-900 group-hover:text-health-700 transition-colors line-clamp-2 mb-1.5 leading-snug">
+                    {hospital.name}
+                  </h3>
 
-                {/* Specialties Tags */}
-                <div className="mb-4">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5 flex items-center gap-1">
-                    <Stethoscope className="w-3 h-3 text-health-500" />
-                    <span>Key Specialties</span>
+                  {/* City & State */}
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500 mb-2.5">
+                    <MapPin className="w-3.5 h-3.5 text-sdaAmber-500 shrink-0" />
+                    <span>{hospital.city}, {hospital.state}</span>
                   </div>
-                  <div className="flex flex-wrap gap-1.5">
-                    {hospital.specialties.slice(0, 3).map((spec, i) => (
+
+                  {/* Short Verified Introduction */}
+                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-3 mb-3">
+                    {hospital.description}
+                  </p>
+
+                  {/* Specialties Pills */}
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {hospital.specialties.slice(0, 2).map((spec, i) => (
                       <span 
                         key={i} 
-                        className="text-[11px] bg-slate-50 border border-slate-200/70 text-slate-700 px-2 py-0.5 rounded-md"
+                        className="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium"
                       >
                         {spec}
                       </span>
                     ))}
-                    {hospital.specialties.length > 3 && (
+                    {hospital.specialties.length > 2 && (
                       <span className="text-[10px] text-slate-400 self-center">
-                        +{hospital.specialties.length - 3} more
+                        +{hospital.specialties.length - 2} more
                       </span>
                     )}
                   </div>
+
                 </div>
+
               </div>
 
-              {/* Card Footer: Address & Direct Contact */}
-              <div className="pt-4 border-t border-slate-100 space-y-2.5">
-                <p className="text-[11px] text-slate-500 line-clamp-1">
-                  📍 {hospital.address}
-                </p>
-                <div className="flex items-center justify-between">
-                  <a 
-                    href={`tel:${hospital.phone}`} 
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-health-700 hover:text-health-900"
+              {/* Action Buttons: View Details & Get Directions (Required) */}
+              <div className="p-5 pt-0 border-t border-slate-100 space-y-2 mt-auto">
+                <div className="pt-3 flex flex-col gap-2">
+                  
+                  <Link
+                    to={`/hospitals/${hospital.id}`}
+                    className="w-full text-center py-2 px-3 rounded-lg text-xs font-bold bg-navy-900 text-white hover:bg-navy-800 transition-all flex items-center justify-center gap-1 shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5" />
-                    <span>{hospital.phone}</span>
-                  </a>
+                    <span>View Hospital Details</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+
                   <a
-                    href="#contact"
-                    className="text-xs font-semibold text-navy-900 hover:text-health-600 flex items-center gap-1"
+                    href={hospital.googleMapsDirectionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center py-1.5 px-3 rounded-lg text-xs font-semibold text-health-700 hover:text-white hover:bg-health-600 border border-health-300 transition-all flex items-center justify-center gap-1.5"
+                    title={`Get Directions to ${hospital.name}`}
                   >
-                    <span>Inquire</span>
-                    <span>→</span>
+                    <Navigation className="w-3.5 h-3.5" />
+                    <span>Get Directions</span>
                   </a>
+
                 </div>
               </div>
 
@@ -163,67 +179,20 @@ export default function HospitalListingSection() {
           ))}
         </div>
 
-        {/* DISTINCT SECTION: College of Nursing (Explicitly separated as mandated) */}
-        <div id="nursing-college" className="rounded-3xl bg-gradient-to-br from-sdaGreen-50 via-white to-health-50 border-2 border-sdaGreen-200 p-8 sm:p-10 shadow-md">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            <div className="lg:col-span-8 space-y-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sdaGreen-100 text-sdaGreen-800 text-xs font-bold uppercase tracking-wider">
-                <GraduationCap className="w-4 h-4 text-sdaGreen-700" />
-                <span>Premier Educational Institution (Kept Distinct)</span>
-              </div>
-              
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-navy-900">
-                {NURSING_COLLEGE.name}
-              </h3>
-
-              <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-600">
-                <span className="flex items-center gap-1">
-                  <MapPin className="w-4 h-4 text-sdaAmber-600" />
-                  {NURSING_COLLEGE.city}, {NURSING_COLLEGE.state}
-                </span>
-                <span>•</span>
-                <span className="flex items-center gap-1 text-sdaGreen-700">
-                  <CheckCircle2 className="w-4 h-4" />
-                  Recognized by Indian Nursing Council (INC) & KNMC
-                </span>
-              </div>
-
-              <p className="text-sm text-slate-600 leading-relaxed">
-                {NURSING_COLLEGE.description} Operates directly in affiliation with the Seventh Day Adventist Hospital in Ottapalam, providing world-class clinical residency, ethics-grounded academic excellence, and wholistic patient care training.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
-                {NURSING_COLLEGE.programs.map((prog, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs font-medium text-slate-700 bg-white/80 p-2 rounded-lg border border-sdaGreen-200/60">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sdaGreen-600 shrink-0" />
-                    <span>{prog}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="lg:col-span-4 bg-white rounded-2xl p-6 border border-sdaGreen-200 shadow-sm space-y-4 text-center">
-              <div className="w-14 h-14 mx-auto rounded-2xl bg-sdaGreen-100 text-sdaGreen-700 flex items-center justify-center">
-                <GraduationCap className="w-7 h-7" />
-              </div>
-              <div>
-                <h4 className="text-base font-bold text-navy-900">Admissions & Inquiries</h4>
-                <p className="text-xs text-slate-500 mt-1">
-                  Kanniyampuram P.O., Ottapalam, Kerala 679104
-                </p>
-              </div>
-              <div className="text-xs space-y-1 text-slate-600">
-                <p><strong>Phone:</strong> {NURSING_COLLEGE.phone}</p>
-                <p><strong>Email:</strong> {NURSING_COLLEGE.email}</p>
-              </div>
-              <Button href="#contact" variant="health" size="sm" className="w-full justify-center">
-                Contact Nursing College
-              </Button>
-            </div>
-
+        {/* Empty State */}
+        {filteredHospitals.length === 0 && (
+          <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
+            <Building2 className="w-12 h-12 mx-auto text-slate-300 mb-3" />
+            <h4 className="text-base font-bold text-navy-900">No Hospitals Found</h4>
+            <p className="text-xs text-slate-500 mt-1">Try resetting your search query or region filter.</p>
+            <button
+              onClick={() => { setSelectedRegion('All'); setSearchQuery(''); }}
+              className="mt-4 px-4 py-2 rounded-lg text-xs font-semibold bg-navy-900 text-white"
+            >
+              Reset Filters
+            </button>
           </div>
-        </div>
+        )}
 
       </div>
     </section>

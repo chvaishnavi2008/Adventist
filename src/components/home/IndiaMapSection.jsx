@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   MapPin, 
   Building2, 
   GraduationCap, 
   ExternalLink, 
   Phone, 
-  Check, 
+  Navigation,
+  ArrowRight, 
   Info,
-  Sparkles
+  Sparkles,
+  CheckCircle2
 } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
 import { MEDICAL_TRUST_HOSPITALS, NURSING_COLLEGE } from '../../data/hospitalsData';
 
 export default function IndiaMapSection() {
-  const [activeFacility, setActiveFacility] = useState(MEDICAL_TRUST_HOSPITALS[1]); // default to Bangalore
+  const [activeFacility, setActiveFacility] = useState(MEDICAL_TRUST_HOSPITALS[1]); // Bangalore default
 
   const allMapItems = [
     ...MEDICAL_TRUST_HOSPITALS,
@@ -21,20 +24,21 @@ export default function IndiaMapSection() {
   ];
 
   return (
-    <section id="map-locations" className="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="map-locations" className="py-16 lg:py-24 bg-slate-50 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeader 
           badge="National Healthcare Presence"
           badgeColor="amber"
           title="Interactive India Hospital Location Map"
-          subtitle="Connecting 10 Medical Trust hospitals and the College of Nursing across India's diverse geography."
+          subtitle="Click on any pin or hospital in the directory to explore our network across North, South, East, and Northeast India."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Interactive Visual Map Graphic & Coordinates */}
+          {/* Left Column (7 cols): Interactive Visual Map */}
           <div className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 relative">
+            
             <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-health-600"></span>
@@ -43,28 +47,28 @@ export default function IndiaMapSection() {
                 </span>
               </div>
               <div className="flex items-center gap-3 text-xs text-slate-500">
-                <span className="flex items-center gap-1">
-                  <span className="w-2.5 h-2.5 rounded-full bg-health-600 inline-block" /> Hospital (10)
+                <span className="flex items-center gap-1.5 font-medium">
+                  <span className="w-2.5 h-2.5 rounded-full bg-health-600 inline-block" /> 10 Hospitals
                 </span>
-                <span className="flex items-center gap-1">
-                  <span className="w-2.5 h-2.5 rounded-full bg-sdaGreen-600 inline-block" /> Nursing College (1)
+                <span className="flex items-center gap-1.5 font-medium">
+                  <span className="w-2.5 h-2.5 rounded-full bg-sdaGreen-600 inline-block" /> 1 Nursing College
                 </span>
               </div>
             </div>
 
-            {/* Custom Interactive SVG Pin Map Container */}
-            <div className="relative w-full aspect-[4/4.2] bg-gradient-to-b from-slate-50 to-health-50/30 rounded-2xl border border-slate-100 flex items-center justify-center overflow-hidden p-4">
+            {/* Map Container */}
+            <div className="relative w-full aspect-[4/4.2] bg-gradient-to-b from-slate-50 to-health-50/20 rounded-2xl border border-slate-100 flex items-center justify-center overflow-hidden p-4">
               
-              {/* Reference Map Graphic Layer */}
+              {/* Background Reference Map Graphic Layer */}
               <img 
                 src="/images/reference-map.png" 
-                alt="Map of India Healthcare Locations" 
+                alt="Map of India Locations" 
                 className="absolute inset-0 w-full h-full object-contain opacity-25 pointer-events-none mix-blend-multiply"
               />
 
               {/* Geo Pins Overlay */}
               <div className="absolute inset-0 w-full h-full">
-                {allMapItems.map((item, index) => {
+                {allMapItems.map((item) => {
                   const isActive = activeFacility.id === item.id;
                   const isNursing = item.isNursing;
 
@@ -103,7 +107,7 @@ export default function IndiaMapSection() {
                         {/* City Label Badge */}
                         <span className={`mt-1 text-[10px] font-bold px-1.5 py-0.5 rounded shadow-sm whitespace-nowrap transition-all ${
                           isActive 
-                            ? 'bg-navy-900 text-white' 
+                            ? 'bg-navy-900 text-white ring-1 ring-white/20' 
                             : 'bg-white/95 text-slate-800 border border-slate-200 group-hover:bg-health-600 group-hover:text-white'
                         }`}>
                           {item.city}
@@ -114,35 +118,36 @@ export default function IndiaMapSection() {
                 })}
               </div>
 
-              {/* Legend Callout on Bottom Left */}
-              <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl border border-slate-200/80 text-[11px] shadow-sm max-w-[210px]">
+              {/* Map Helper Callout */}
+              <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm p-2.5 rounded-xl border border-slate-200/80 text-[11px] shadow-sm max-w-[220px]">
                 <div className="font-bold text-navy-900 mb-1 flex items-center gap-1">
-                  <Sparkles className="w-3 h-3 text-sdaAmber-500" />
-                  <span>Network Coverage</span>
+                  <Sparkles className="w-3.5 h-3.5 text-sdaAmber-500" />
+                  <span>Interactive Selection</span>
                 </div>
                 <p className="text-slate-500 text-[10px] leading-tight">
-                  Click any pin or list item to view institution details, contact info, and departments.
+                  Click any pin on the map or hospital from the list to preview details and access individual hospital pages.
                 </p>
               </div>
 
             </div>
 
-            {/* Note about newly added mission hospitals */}
+            {/* Frontier Health Note */}
             <div className="mt-4 p-3 rounded-xl bg-amber-50/70 border border-amber-200/60 text-xs text-amber-900 flex items-start gap-2">
               <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
               <span>
-                <strong>Document Note:</strong> Includes newly commissioned mission hospitals <strong>AMH Jengjal</strong> (Meghalaya) and <strong>GATE Hospital</strong> (West Bengal) as indicated in reference documents.
+                <strong>Verified Coverage:</strong> Spanning 10 Medical Trust hospitals across 8 states, including frontier mission hospitals in <strong>Jengjal (Garo Hills, Meghalaya)</strong> and <strong>Falakata (Dooars, West Bengal)</strong>.
               </span>
             </div>
 
           </div>
 
-          {/* Right Column: Selected Facility Details Card & Quick Navigator */}
+          {/* Right Column (5 cols): Active Facility Overview Card & Directory */}
           <div className="lg:col-span-5 space-y-6">
             
             {/* Active Facility Card */}
             <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-md border-2 border-health-500 relative overflow-hidden">
-              <div className="flex items-center justify-between mb-4">
+              
+              <div className="flex items-center justify-between mb-3">
                 <span className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${
                   activeFacility.type === 'College of Nursing' 
                     ? 'bg-sdaGreen-100 text-sdaGreen-800' 
@@ -155,65 +160,83 @@ export default function IndiaMapSection() {
                 </span>
               </div>
 
-              <h3 className="text-2xl font-extrabold text-navy-900 mb-2">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-navy-900 mb-1.5">
                 {activeFacility.name}
               </h3>
               
-              <div className="flex items-center gap-1.5 text-sm font-semibold text-slate-600 mb-4">
-                <MapPin className="w-4 h-4 text-sdaAmber-600 shrink-0" />
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 mb-4">
+                <MapPin className="w-3.5 h-3.5 text-sdaAmber-600 shrink-0" />
                 <span>{activeFacility.city}, {activeFacility.state}</span>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+              <p className="text-xs text-slate-600 leading-relaxed mb-4">
                 {activeFacility.description}
               </p>
 
-              {/* Specialties / Programs */}
-              <div className="mb-6 p-4 rounded-xl bg-slate-50 border border-slate-100">
-                <div className="text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">
-                  {activeFacility.type === 'College of Nursing' ? 'Academic Programs' : 'Clinical Departments'}
+              {/* Specialties / Key Departments */}
+              <div className="mb-4 p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+                <div className="text-[11px] font-bold text-navy-900 uppercase tracking-wider mb-2">
+                  {activeFacility.type === 'College of Nursing' ? 'Programs Offered' : 'Key Clinical Specialties'}
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {(activeFacility.specialties || activeFacility.programs || []).map((item, i) => (
+                  {(activeFacility.specialties || activeFacility.programs || []).slice(0, 4).map((item, i) => (
                     <span 
                       key={i} 
-                      className="text-xs bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg"
+                      className="text-[11px] bg-white border border-slate-200 text-slate-700 px-2 py-0.5 rounded-md"
                     >
-                      {item}
+                      {typeof item === 'string' ? item : item.title}
                     </span>
                   ))}
                 </div>
               </div>
 
               {/* Contact Info */}
-              <div className="space-y-2 text-xs text-slate-600 pb-4 border-b border-slate-100">
-                <p><strong>Address:</strong> {activeFacility.address}</p>
-                <p><strong>Phone:</strong> {activeFacility.phone}</p>
+              <div className="space-y-1.5 text-xs text-slate-600 pb-4 border-b border-slate-100">
+                <p>📍 <strong>Address:</strong> {activeFacility.address}</p>
+                <p>📞 <strong>Phone:</strong> {activeFacility.phone}</p>
               </div>
 
-              <div className="pt-4 flex items-center justify-between">
-                <a 
-                  href={`#${activeFacility.id}`}
-                  className="text-xs font-bold text-health-700 hover:text-health-900"
+              {/* Action Buttons: Details Page & Directions */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
+                {activeFacility.type === 'College of Nursing' ? (
+                  <Link
+                    to="/nursing-college"
+                    className="w-full sm:w-auto flex-grow text-center py-2.5 px-4 rounded-xl text-xs font-bold bg-sdaGreen-600 hover:bg-sdaGreen-700 text-white shadow-sm flex items-center justify-center gap-1.5"
+                  >
+                    <span>View Nursing College Page</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                ) : (
+                  <Link
+                    to={`/hospitals/${activeFacility.id}`}
+                    className="w-full sm:w-auto flex-grow text-center py-2.5 px-4 rounded-xl text-xs font-bold bg-navy-900 hover:bg-navy-800 text-white shadow-sm flex items-center justify-center gap-1.5"
+                  >
+                    <span>View Full Hospital Page</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                )}
+
+                <a
+                  href={activeFacility.googleMapsDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto text-center py-2.5 px-3 rounded-xl text-xs font-bold text-health-700 hover:bg-health-50 border border-health-300 flex items-center justify-center gap-1.5"
+                  title="Open in Google Maps"
                 >
-                  View Facility Profile →
-                </a>
-                <a 
-                  href={`tel:${activeFacility.phone}`} 
-                  className="px-4 py-2 rounded-lg bg-navy-900 text-white text-xs font-semibold hover:bg-navy-800"
-                >
-                  Call Reception
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>Directions</span>
                 </a>
               </div>
+
             </div>
 
             {/* Quick List Directory */}
-            <div className="bg-white rounded-2xl p-5 border border-slate-200">
+            <div className="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm">
               <h4 className="text-xs font-bold text-navy-900 uppercase tracking-wider mb-3">
-                All 11 Facilities Directory
+                Quick Facility Navigator
               </h4>
               <div className="max-h-60 overflow-y-auto space-y-1.5 pr-2">
-                {allMapItems.map((item) => (
+                {allMapItems.map((item, idx) => (
                   <button
                     key={item.id}
                     onClick={() => setActiveFacility(item)}
@@ -223,7 +246,9 @@ export default function IndiaMapSection() {
                         : 'hover:bg-slate-50 text-slate-700'
                     }`}
                   >
-                    <span className="truncate pr-2">{item.name}</span>
+                    <span className="truncate pr-2">
+                      {idx + 1}. {item.name}
+                    </span>
                     <span className={`text-[10px] px-1.5 py-0.5 rounded ${
                       activeFacility.id === item.id 
                         ? 'bg-navy-800 text-slate-200' 

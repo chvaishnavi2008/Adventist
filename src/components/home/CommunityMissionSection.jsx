@@ -70,9 +70,12 @@ export default function CommunityMissionSection() {
               Today, that calling remains vivid. From the mountainous terrain of Aizawl and Shimla to the tea estates of Falakata and the Garo Hills of Meghalaya, our hospitals function as beacons of hope, offering subsidised care, mobile health camps, and emergency interventions.
             </p>
 
-            <div className="pt-2">
-              <Button href="#contact" variant="primary" size="md">
-                Partner With Our Community Mission
+            <div className="pt-2 flex flex-wrap gap-3">
+              <Button to="/community" variant="primary" size="md">
+                Explore Community Outreach
+              </Button>
+              <Button to="/contact" variant="outline" size="md">
+                Partner With Our Mission
               </Button>
             </div>
           </div>

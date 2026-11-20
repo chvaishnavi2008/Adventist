@@ -82,10 +82,10 @@ export default function TrustIntroSection() {
 
             {/* Direct Trust Breakdown */}
             <div className="pt-3 flex flex-wrap items-center gap-4">
-              <Button href="#hospitals" variant="primary" size="md">
+              <Button to="/hospitals" variant="primary" size="md">
                 View 10 Medical Trust Hospitals
               </Button>
-              <Button href="#nursing-college" variant="outline-health" size="md">
+              <Button to="/nursing-college" variant="outline-health" size="md">
                 College of Nursing (Ottapalam)
               </Button>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   GraduationCap, 
   Briefcase, 
@@ -104,12 +105,12 @@ export default function CareersEducationSection() {
                 <p>📞 Phone: {NURSING_COLLEGE.phone}</p>
                 <p>✉️ Email: {NURSING_COLLEGE.email}</p>
               </div>
-              <a 
-                href="#contact" 
+              <Link 
+                to="/nursing-college" 
                 className="inline-flex items-center justify-center w-full px-4 py-2.5 rounded-xl bg-sdaGreen-600 hover:bg-sdaGreen-700 text-white text-xs font-bold transition-all shadow-md"
               >
-                Request Prospectus Information
-              </a>
+                View College of Nursing Page →
+              </Link>
             </div>
 
           </div>
@@ -122,13 +123,13 @@ export default function CareersEducationSection() {
               <h3 className="text-xl font-bold text-navy-900">Career Opportunities Across Our 10 Hospitals</h3>
               <p className="text-xs text-slate-500">Find your purpose in faith-driven, compassionate healthcare delivery</p>
             </div>
-            <a 
-              href="#contact" 
+            <Link 
+              to="/careers" 
               className="text-xs font-bold text-health-700 hover:text-navy-900 flex items-center gap-1"
             >
-              <span>Submit Your CV / Inquiry</span>
+              <span>Explore Career Pathways</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -148,13 +149,13 @@ export default function CareersEducationSection() {
                     {track.desc}
                   </p>
                 </div>
-                <a 
-                  href="#contact" 
+                <Link 
+                  to="/careers" 
                   className="text-xs font-semibold text-navy-900 hover:text-health-600 inline-flex items-center gap-1 pt-3 border-t border-slate-100"
                 >
                   <span>Apply with Trust</span>
                   <span>→</span>
-                </a>
+                </Link>
               </div>
             ))}
           </div>

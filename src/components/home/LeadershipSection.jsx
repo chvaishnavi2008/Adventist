@@ -174,6 +174,11 @@ export default function LeadershipSection() {
                     <h4 className="text-base font-bold text-navy-900 mt-1">
                       {person.name}
                     </h4>
+                    {!person.image && (
+                      <span className="text-[10px] text-slate-400 block italic mt-0.5">
+                        Official portrait photo awaiting division archive update
+                      </span>
+                    )}
                   </div>
                   <p className="text-xs text-slate-600">
                     {person.bio}

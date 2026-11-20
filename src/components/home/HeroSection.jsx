@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Building2, 
   GraduationCap, 
@@ -6,31 +7,36 @@ import {
   ShieldCheck, 
   MapPin, 
   ArrowRight,
-  Sparkles,
-  CheckCircle2
+  CheckCircle2,
+  Calendar
 } from 'lucide-react';
 import Button from '../common/Button';
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-navy text-white pt-12 pb-20 lg:pt-20 lg:pb-32">
-      {/* Background Subtle Geometric / Grid Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#0284c7_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-navy-950 text-white min-h-[580px] lg:min-h-[660px] flex items-center">
       
-      {/* Ambient Glows */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-health-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -right-32 w-96 h-96 bg-sdaAmber-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background High-Impact Healthcare Photography with Dark Gradient Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2000&q=80" 
+          alt="Adventist Healthcare Clinical Setting" 
+          className="w-full h-full object-cover object-center opacity-25"
+        />
+        {/* Subtle Dark Navy Gradient for Maximum Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/90 to-navy-900/70" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          {/* Main Hero Text Content */}
+          <div className="lg:col-span-8 space-y-6 text-left">
             
-            {/* Trust Identifier Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 border border-health-500/30 text-health-300 text-xs font-semibold tracking-wide shadow-sm">
+            {/* Division & Trust Identity Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/90 border border-health-500/40 text-health-300 text-xs font-semibold tracking-wide shadow-sm backdrop-blur-sm">
               <span className="w-2 h-2 rounded-full bg-sdaGreen-400 animate-ping" />
-              <span>Adventist Health India • The Medical Trust of the Seventh-day Adventists</span>
+              <span>The Medical Trust of the Seventh-day Adventists (Adventist Health India)</span>
             </div>
 
             {/* Exact Required Heading */}
@@ -43,33 +49,30 @@ export default function HeroSection() {
               Where world-class medicine and spiritual care meet.
             </p>
 
-            {/* Secondary Descriptive Paragraph based on Source Truth */}
+            {/* Secondary Verified Narrative */}
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
-              Carrying forward more than 160 years of wholistic health heritage. The Medical Trust operates 10 hospitals and 1 premier College of Nursing across India, providing healing for body, mind, and spirit.
+              Operating 10 hospitals and 1 premier College of Nursing across India under the Southern Asia Division. Carrying forward over 160 years of wholistic health heritage founded in Battle Creek in 1866.
             </p>
 
             {/* Exact Required Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Button 
-                href="#hospitals" 
-                variant="health" 
-                size="lg"
-                icon={ArrowRight}
-                iconPosition="right"
+              <Link 
+                to="/hospitals" 
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg text-sm font-bold bg-health-600 text-white hover:bg-health-700 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
-                Explore Our Hospitals
-              </Button>
+                <span>Explore Our Hospitals</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
 
-              <Button 
-                href="#about-trust" 
-                variant="outline-white" 
-                size="lg"
+              <Link 
+                to="/about" 
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-lg text-sm font-semibold border-2 border-white/80 text-white hover:bg-white hover:text-navy-950 transition-all"
               >
                 About Our Mission
-              </Button>
+              </Link>
             </div>
 
-            {/* Trust Bullet Highlights */}
+            {/* Bullet Highlights */}
             <div className="pt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 border-t border-navy-800/80">
               <div className="flex items-center gap-2 text-xs text-slate-300">
                 <CheckCircle2 className="w-4 h-4 text-sdaGreen-400 shrink-0" />
@@ -87,89 +90,100 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Right Visual / Highlights Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl bg-gradient-to-b from-navy-800/90 to-navy-900/95 p-6 sm:p-8 border border-white/10 shadow-2xl backdrop-blur-md">
+          {/* Right Floating Card with Official Logo & Trust Credential */}
+          <div className="lg:col-span-4">
+            <div className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 p-6 shadow-2xl text-left space-y-5">
               
-              {/* Header Badge in Card */}
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-white rounded-xl shadow-md">
-                    <img 
-                      src="/images/logo.jpeg" 
-                      alt="Logo Emblem" 
-                      className="h-9 w-auto object-contain"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-white text-base font-bold">Southern Asia Division</h3>
-                    <p className="text-xs text-slate-400">General Conference of SDA</p>
-                  </div>
+              <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+                <div className="p-2.5 bg-white rounded-xl shadow-md shrink-0">
+                  <img 
+                    src="/images/logo.jpeg" 
+                    alt="Emblem" 
+                    className="h-10 w-auto object-contain"
+                  />
                 </div>
-                <span className="px-2.5 py-1 rounded-md bg-health-500/20 text-health-300 text-xs font-semibold border border-health-500/30">
-                  Reg. 515/1999
-                </span>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4 py-6">
-                <div className="p-4 rounded-xl bg-navy-950/60 border border-white/5">
-                  <div className="flex items-center gap-2 text-health-400 text-xs font-semibold mb-1">
-                    <Building2 className="w-4 h-4" />
-                    <span>Hospitals</span>
-                  </div>
-                  <div className="text-3xl font-extrabold text-white">10</div>
-                  <div className="text-[11px] text-slate-400 mt-1">Across 8 Indian States</div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-navy-950/60 border border-white/5">
-                  <div className="flex items-center gap-2 text-sdaGreen-400 text-xs font-semibold mb-1">
-                    <GraduationCap className="w-4 h-4" />
-                    <span>Nursing College</span>
-                  </div>
-                  <div className="text-3xl font-extrabold text-white">1</div>
-                  <div className="text-[11px] text-slate-400 mt-1">Ottapalam, Kerala</div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-navy-950/60 border border-white/5">
-                  <div className="flex items-center gap-2 text-sdaAmber-400 text-xs font-semibold mb-1">
-                    <Heart className="w-4 h-4" />
-                    <span>Faith Roots</span>
-                  </div>
-                  <div className="text-3xl font-extrabold text-white">1863</div>
-                  <div className="text-[11px] text-slate-400 mt-1">Battle Creek 1866</div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-navy-950/60 border border-white/5">
-                  <div className="flex items-center gap-2 text-health-300 text-xs font-semibold mb-1">
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Global Network</span>
-                  </div>
-                  <div className="text-3xl font-extrabold text-white">700+</div>
-                  <div className="text-[11px] text-slate-400 mt-1">Institutions Worldwide</div>
+                <div>
+                  <h3 className="text-white text-sm font-bold">Southern Asia Division</h3>
+                  <p className="text-xs text-slate-300">General Conference of SDA</p>
                 </div>
               </div>
 
-              {/* Bottom Quick Action */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-                <span className="text-slate-300 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-sdaAmber-400" />
-                  <span>North, South, East & Northeast</span>
-                </span>
-                <a 
-                  href="#map-locations" 
-                  className="text-health-300 hover:text-white font-semibold transition-colors flex items-center gap-1"
-                >
-                  <span>Explore Map</span>
-                  <span>→</span>
-                </a>
+              <div className="space-y-2.5 text-xs text-slate-200">
+                <div className="flex items-center justify-between p-2 rounded-lg bg-navy-950/40">
+                  <span className="text-slate-400">Trust Reg:</span>
+                  <span className="font-bold text-white">No. 515 of 1999</span>
+                </div>
+                <div className="flex items-center justify-between p-2 rounded-lg bg-navy-950/40">
+                  <span className="text-slate-400">Direct Hospitals:</span>
+                  <span className="font-bold text-health-300">10 Institutions</span>
+                </div>
+                <div className="flex items-center justify-between p-2 rounded-lg bg-navy-950/40">
+                  <span className="text-slate-400">Nursing Education:</span>
+                  <span className="font-bold text-sdaGreen-300">Ottapalam, Kerala</span>
+                </div>
+                <div className="flex items-center justify-between p-2 rounded-lg bg-navy-950/40">
+                  <span className="text-slate-400">Reception Line:</span>
+                  <a href="tel:+9104344263800" className="font-bold text-sdaAmber-300 hover:underline">
+                    +91-04344-263800
+                  </a>
+                </div>
               </div>
+
+              <Link
+                to="/hospitals"
+                className="block text-center w-full py-2.5 rounded-lg text-xs font-bold bg-white text-navy-950 hover:bg-slate-100 transition-colors"
+              >
+                Find Nearest Hospital →
+              </Link>
 
             </div>
           </div>
 
         </div>
+
+        {/* 4 STATISTIC HIGHLIGHTS BAR (Sterling Inspired Horizontal Metric Bar) */}
+        <div className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div className="p-4 rounded-xl bg-navy-900/80 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-health-400 text-xs font-bold uppercase tracking-wider mb-1">
+              <Building2 className="w-4 h-4" />
+              <span>Network Hospitals</span>
+            </div>
+            <div className="text-3xl sm:text-4xl font-extrabold text-white">10</div>
+            <div className="text-xs text-slate-300 mt-1">Medical Trust Hospitals across India</div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-navy-900/80 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-sdaGreen-400 text-xs font-bold uppercase tracking-wider mb-1">
+              <GraduationCap className="w-4 h-4" />
+              <span>Nursing College</span>
+            </div>
+            <div className="text-3xl sm:text-4xl font-extrabold text-white">1</div>
+            <div className="text-xs text-slate-300 mt-1">College of Nursing in Ottapalam</div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-navy-900/80 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-sdaAmber-400 text-xs font-bold uppercase tracking-wider mb-1">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Trust Registration</span>
+            </div>
+            <div className="text-3xl sm:text-4xl font-extrabold text-white">1999</div>
+            <div className="text-xs text-slate-300 mt-1">Public Charitable Trust Reg. 515/1999</div>
+          </div>
+
+          <div className="p-4 rounded-xl bg-navy-900/80 border border-white/10 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-health-300 text-xs font-bold uppercase tracking-wider mb-1">
+              <Heart className="w-4 h-4" />
+              <span>Global Church Roots</span>
+            </div>
+            <div className="text-3xl sm:text-4xl font-extrabold text-white">1863</div>
+            <div className="text-xs text-slate-300 mt-1">Battle Creek Health Work (1866)</div>
+          </div>
+
+        </div>
+
       </div>
+
     </section>
   );
 }

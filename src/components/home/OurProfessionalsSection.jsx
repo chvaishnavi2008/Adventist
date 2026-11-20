@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Stethoscope, 
   HeartHandshake, 
@@ -92,12 +93,12 @@ export default function OurProfessionalsSection() {
             </p>
           </div>
           <div className="shrink-0">
-            <a 
-              href="#hospitals" 
+            <Link 
+              to="/hospitals" 
               className="px-6 py-3 rounded-xl bg-health-600 text-white font-semibold text-sm hover:bg-health-700 transition-colors shadow-md inline-block"
             >
               Consult Our Hospitals
-            </a>
+            </Link>
           </div>
         </div>
 
