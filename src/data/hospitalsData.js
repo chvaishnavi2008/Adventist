@@ -41,10 +41,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: "https://aizawladventisthospital.com/",
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Aizawl+Adventist+Hospital+Chawnpui+Aizawl+Mizoram&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Aizawl+Adventist+Hospital+Chawnpui+Aizawl+Mizoram",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Aizawl Adventist Hospital hillside campus, Chawnpui",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/aizawl.jpg",
+    imageCaption: "Aizawl Adventist Hospital main campus building, Seventh-day Tlang, Chawnpui",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 88.5, y: 48.0 }
   },
   {
@@ -84,10 +84,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: "https://sdahospital.com",
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+Medical+Centre+Spencer+Road+Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+Medical+Centre+Spencer+Road+Bengaluru",
-    image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Seventh Day Adventist Medical Centre, Bengaluru urban facility",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/bangalore.jpg",
+    imageCaption: "Seventh Day Adventist Medical Centre main multi-speciality hospital entrance, Spencer Road, Bengaluru",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 38.0, y: 76.5 }
   },
   {
@@ -127,7 +127,7 @@ export const MEDICAL_TRUST_HOSPITALS = [
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Mattison+Memorial+Hospital+Bulandshahr+Road+Hapur+Uttar+Pradesh&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Mattison+Memorial+Hospital+Bulandshahr+Road+Hapur+Uttar+Pradesh",
     image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Mattison Memorial Hospital medical ward & patient care facility",
+    imageCaption: "Mattison Memorial Hospital patient care facility - Official photograph awaiting division upload",
     isAuthenticImage: false,
     imageBadge: "Representative Clinical Visual",
     mapCoords: { x: 39.5, y: 31.0 }
@@ -168,10 +168,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: null,
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Pune+Adventist+Hospital+Salisbury+Park+Pune&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Pune+Adventist+Hospital+Salisbury+Park+Pune",
-    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Pune Adventist Hospital inpatient & clinical complex, Salisbury Park",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/pune.jpg",
+    imageCaption: "Pune Adventist Hospital Hemkamal Life-Care facade and 24-Hour Casualty, Salisbury Park, Pune",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 32.5, y: 60.5 }
   },
   {
@@ -210,10 +210,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: "https://rnmh.org",
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Ruby+Nelson+Memorial+Hospital+Cantonment+Road+Jalandhar&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Ruby+Nelson+Memorial+Hospital+Cantonment+Road+Jalandhar",
-    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Ruby Nelson Memorial Hospital surgical & ophthalmology center",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/jalandhar.jpg",
+    imageCaption: "Ruby Nelson Memorial Hospital & Adventist Institute of Optometry building, Cantonment Road, Jalandhar",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 31.0, y: 22.0 }
   },
   {
@@ -252,10 +252,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: "https://www.osdah.in/",
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+Hospital+Kanniyampuram+Ottapalam+Kerala&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+Hospital+Kanniyampuram+Ottapalam+Kerala",
-    image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Seventh Day Adventist Hospital, Ottapalam multi-specialty healthcare campus",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/ottapalam.jpg",
+    imageCaption: "Seventh-day Adventist Hospital main entrance and outpatient reception facade, Ottapalam, Kerala",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 34.5, y: 84.5 }
   },
   {
@@ -293,10 +293,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: "https://www.sanitariumsimla.org",
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Simla+Sanitarium+Hospital+Cart+Road+Shimla&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Simla+Sanitarium+Hospital+Cart+Road+Shimla",
-    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Simla Sanitarium & Hospital Himalayan medical facility",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/shimla.jpg",
+    imageCaption: "Simla Sanitarium & Hospital historic Carton House mountain campus, Chaura Maidan, Shimla",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 35.0, y: 18.0 }
   },
   {
@@ -334,10 +334,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: null,
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+Hospital+VOC+Nagar+Thanjavur&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+Hospital+VOC+Nagar+Thanjavur",
-    image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Seventh Day Adventist Hospital clinical wards, Thanjavur",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/thanjavur.jpg",
+    imageCaption: "Seventh-day Adventist Hospital illuminated entrance and premises, Thanjavur, Tamil Nadu",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 41.5, y: 85.0 }
   },
   {
@@ -351,7 +351,7 @@ export const MEDICAL_TRUST_HOSPITALS = [
     beds: "40+ Beds",
     tagline: "Pioneering frontier healthcare in remote Meghalaya",
     description: "A vital mission hospital delivering modern clinical, trauma, and surgical services to the indigenous tribal populations of the West Garo Hills.",
-    longDescription: "Commissioned in 2019 in Jengjal, West Garo Hills District, Meghalaya, Adventist Mission Hospital (Garo Hills) addresses critical geographical and healthcare barriers in Northeast India. Operating in partnership with regional health authorities and the Seventh-day Adventist Church, the hospital brings modern emergency surgical care, maternal health, and mobile tribal medical camps to remote villages.",
+    longDescription: "Commissioned in 2019 in Jengjal, West Garo Hills District, Meghalaya, Adventist Mission Hospital (operating the Jengjal Sub-Divisional Hospital in partnership with the Government of Meghalaya) addresses critical geographical and healthcare barriers in Northeast India. The hospital brings modern emergency surgical care, maternal health, and mobile tribal medical camps to remote villages.",
     specialties: [
       "Frontier & Tribal Medicine",
       "Emergency Trauma",
@@ -374,10 +374,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: "https://ghamh.com",
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Adventist+Mission+Hospital+Jengjal+Meghalaya&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Adventist+Mission+Hospital+Jengjal+Meghalaya",
-    image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "Adventist Mission Hospital, Jengjal frontier healthcare facility",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/jengjal.jpg",
+    imageCaption: "Adventist Mission Hospital / Jengjal Sub-Divisional Hospital front facility, West Garo Hills, Meghalaya",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 80.5, y: 41.0 }
   },
   {
@@ -414,10 +414,10 @@ export const MEDICAL_TRUST_HOSPITALS = [
     website: null,
     googleMapsEmbedUrl: "https://maps.google.com/maps?q=Gate+Adventist+Medical+Centre+Falakata+West+Bengal&t=&z=15&ie=UTF8&iwloc=&output=embed",
     googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Gate+Adventist+Medical+Centre+Falakata+West+Bengal",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80",
-    imageCaption: "GATE Adventist Mission Hospital, Falakata Dooars health center",
-    isAuthenticImage: false,
-    imageBadge: "Representative Clinical Visual",
+    image: "/images/hospitals/falakata.jpg",
+    imageCaption: "GATE Adventist Medical Centre building and entrance gate, Falakata, West Bengal",
+    isAuthenticImage: true,
+    imageBadge: "Verified Facility Photo",
     mapCoords: { x: 77.0, y: 35.5 }
   }
 ];
@@ -460,10 +460,10 @@ export const NURSING_COLLEGE = {
   website: "https://www.osdah.in/",
   googleMapsEmbedUrl: "https://maps.google.com/maps?q=Seventh+Day+Adventist+College+of+Nursing+Ottapalam+Kerala&t=&z=15&ie=UTF8&iwloc=&output=embed",
   googleMapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Seventh+Day+Adventist+College+of+Nursing+Ottapalam+Kerala",
-  image: "/images/staff-sonia-khan.jpeg",
-  imageCaption: "Seventh Day Adventist College of Nursing academic administration, Ottapalam",
+  image: "/images/hospitals/college-of-nursing.jpg",
+  imageCaption: "Seventh Day Adventist College of Nursing academic campus building, Ottapalam, Kerala",
   isAuthenticImage: true,
-  imageBadge: "Verified Institution Image",
+  imageBadge: "Verified Facility Photo",
   mapCoords: { x: 34.5, y: 84.5 }
 };
 
